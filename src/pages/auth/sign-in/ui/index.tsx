@@ -1,3 +1,5 @@
+import { SignInFormBody } from '@/features/auth/sign-in';
+
 export const SignInPage = () => {
-  return <h1>login</h1>;
+  return <SignInFormBody />;
 };

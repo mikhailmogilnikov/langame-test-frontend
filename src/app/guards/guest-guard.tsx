@@ -2,7 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
 export const GuestGuard = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = Boolean(localStorage.getItem('access'));
 
   return isAuthenticated ? (
     <Navigate to='/profile/dashboard' />

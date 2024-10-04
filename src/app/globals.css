@@ -4,16 +4,53 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@font-face {
+  font-family: 'Nitti';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../shared/assets/fonts/nitti/Nitti-Normal.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Nitti';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../shared/assets/fonts/nitti/Nitti-Bold.woff') format('woff');
+}
+
 :root {
-  --color-background: hsl(0, 0%, 100%);
-  --color-foreground: hsl(0, 0%, 0%);
-  --color-primary: hsl(0, 100%, 43%);
-  --color-secondary: hsl(329, 82%, 65%);
-  --color-success: hsl(137, 100%, 34%);
+  --color-background: 0, 0%, 100%;
+  --color-foreground: 0, 0%, 0%;
+  --color-default: 0, 0%, 94%;
+  --color-default-foreground: 0, 0%, 50%;
+  --color-primary: 0, 100%, 43%;
+  --color-primary-foreground: 0, 0%, 100%;
+  --color-secondary: 329, 82%, 65%;
+  --color-success: 137, 100%, 34%;
+  --color-success-foreground: 0, 0%, 100%;
+  --color-danger: 0, 100%, 43%;
+  --color-danger-foreground: 0, 0%, 100%;
 }
 
 html {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: 'Lato', sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s;
 }

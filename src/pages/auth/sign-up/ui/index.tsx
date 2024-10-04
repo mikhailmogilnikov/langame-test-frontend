@@ -1,3 +1,5 @@
+import { SignUpFormBody } from '@/features/auth/sign-up';
+
 export const SignUpPage = () => {
-  return <h1>registration</h1>;
+  return <SignUpFormBody />;
 };
