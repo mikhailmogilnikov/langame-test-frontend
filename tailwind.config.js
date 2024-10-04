@@ -23,10 +23,10 @@ module.exports = {
         DEFAULT: 'hsla(var(--color-success), <alpha-value>)',
         foreground: 'hsla(var(--color-success-foreground), <alpha-value>)',
       },
-      // warning: {
-      //   DEFAULT: 'hsla(var(--color-warning), <alpha-value>)',
-      //   foreground: 'hsla(var(--color-warning-foreground), <alpha-value>)',
-      // },
+      warning: {
+        DEFAULT: 'hsla(var(--color-warning), <alpha-value>)',
+        foreground: 'hsla(var(--color-warning-foreground), <alpha-value>)',
+      },
       // danger: {
       //   DEFAULT: 'hsla(var(--color-danger), <alpha-value>)',
       //   foreground: 'hsla(var(--color-danger-foreground), <alpha-value>)',

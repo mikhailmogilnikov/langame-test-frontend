@@ -21,15 +21,15 @@
 :root {
   --color-background: 0, 0%, 100%;
   --color-foreground: 0, 0%, 0%;
+  --color-default: 0, 0%, 94%;
+  --color-default-foreground: 0, 0%, 0%;
   --color-primary: 0, 100%, 43%;
+  --color-primary-foreground: 0, 0%, 100%;
   --color-secondary: 329, 82%, 65%;
   --color-success: 137, 100%, 34%;
-
-  /* --color-background: hsl(0, 0%, 100%);
-  --color-foreground: hsl(0, 0%, 0%);
-  --color-primary: hsl(0, 100%, 43%);
-  --color-secondary: hsl(329, 82%, 65%);
-  --color-success: hsl(137, 100%, 34%); */
+  --color-success-foreground: 0, 0%, 100%;
+  --color-warning: 0, 100%, 43%;
+  --color-warning-foreground: 0, 0%, 100%;
 }
 
 html {

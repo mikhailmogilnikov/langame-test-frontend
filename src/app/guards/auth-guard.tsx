@@ -2,7 +2,9 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
 export const AuthGuard = () => {
-  const isAuthenticated = false;
+  const isAuthenticated = Boolean(localStorage.getItem('access'));
+
+  console.log(isAuthenticated);
 
   return isAuthenticated ? (
     <Suspense fallback={<p>Loading...</p>}>
