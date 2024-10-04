@@ -1,4 +1,5 @@
 import { forwardRef, useState } from 'react';
+import { TbLock } from 'react-icons/tb';
 
 import { InputWrapper } from './wrapper';
 import { InputProps } from './input';
@@ -33,7 +34,7 @@ export const InputPassword = forwardRef<Ref, InputProps>((props, ref) => {
   );
 
   return (
-    <InputWrapper {...props}>
+    <InputWrapper icon={<TbLock opacity={0.5} size={22} />} {...props}>
       <>
         <input
           ref={ref}

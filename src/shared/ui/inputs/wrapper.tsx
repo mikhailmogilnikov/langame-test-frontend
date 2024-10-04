@@ -25,12 +25,12 @@ type InputWrapperVariants = VariantProps<typeof inputWrapper>;
 export type InputWrapperProps = {
   icon?: ReactElement;
   children: ReactElement;
-  name: string;
+  label: string;
   message?: string;
 } & InputWrapperVariants;
 
 export const InputWrapper = (props: InputWrapperProps) => {
-  const { icon, name, children, message, isValid } = props;
+  const { icon, label, children, message, isValid } = props;
 
   const isInvalid = !isValid && typeof isValid !== 'undefined';
 
@@ -47,7 +47,7 @@ export const InputWrapper = (props: InputWrapperProps) => {
     <div className={inputWrapper(props)}>
       {icon}
       <div className='w-full flex flex-col gap-1'>
-        <label className='text-xs opacity-50'>{name}</label>
+        <label className='text-xs opacity-50'>{label}</label>
         <div className='flex gap-2'>{children}</div>
       </div>
 

@@ -1,0 +1,1 @@
+export { SignUpFormBody } from './ui';

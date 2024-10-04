@@ -1,18 +1,18 @@
 import { useMask } from '@react-input/mask';
-import { FiSmartphone } from 'react-icons/fi';
+import { CgTranscript } from 'react-icons/cg';
 
 import { Input, InputProps } from './input';
 
-export const InputPhone = (props: InputProps) => {
+export const InputPassport = (props: InputProps) => {
   const inputPhoneRef = useMask({
-    mask: '_ (___) ___ __ __',
+    mask: '____ ______',
     replacement: { _: /\d/ },
   });
 
   return (
     <Input
       ref={inputPhoneRef}
-      icon={<FiSmartphone opacity={0.5} size={22} />}
+      icon={<CgTranscript opacity={0.5} size={22} />}
       type='tel'
       {...props}
     />

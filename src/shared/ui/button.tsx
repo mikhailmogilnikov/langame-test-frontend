@@ -2,19 +2,19 @@ import { DetailedHTMLProps, ReactNode } from 'react';
 import { tv, VariantProps } from 'tailwind-variants';
 
 export const button = tv({
-  base: 'w-full px-4 py-1.5 rounded-full active:scale-95 transition-transform-color text-sm font-bold',
+  base: 'w-full flex gap-3 items-center justify-center rounded-full active:scale-95 transition-transform-color  font-bold',
   variants: {
     color: {
-      default: 'bg-default text-default-foreground ',
+      default: 'bg-default text-default-foreground',
       primary: 'bg-primary text-primary-foreground shadow-md shadow-primary/30',
     },
     variant: {
       solid: '',
-      bordered: 'bg-transparent border-2',
+      bordered: 'bg-transparent text-foreground border-[1px] border-foreground/30',
     },
     size: {
-      sm: 'h-[37px]',
-      md: 'h-[46px]',
+      sm: 'h-[37px] text-xs',
+      md: 'h-[46px] text-sm',
     },
     isDisabled: {
       true: 'opacity-30 active:scale-100',
