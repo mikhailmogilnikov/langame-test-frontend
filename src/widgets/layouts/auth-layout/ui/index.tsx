@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
 import { AuthLayoutFooter } from './footer';
 import { Clock } from './clock';
@@ -7,6 +8,7 @@ import { Room } from './room';
 import BgSvgBottom from '@/shared/assets/svg/bg-elem-bottom.svg';
 import { Flex } from '@/shared/ui/flex';
 import { BgElemTop } from '@/shared/assets/svg/bg-elem-top';
+import { Spinner } from '@/shared/ui/spinner';
 
 export const AuthLayout = () => {
   return (
@@ -18,7 +20,9 @@ export const AuthLayout = () => {
 
       <Room />
 
-      <Outlet />
+      <Suspense fallback={<Spinner />}>
+        <Outlet />
+      </Suspense>
 
       <Clock />
       <AuthLayoutFooter />

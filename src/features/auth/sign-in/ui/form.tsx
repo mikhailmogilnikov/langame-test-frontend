@@ -1,42 +1,44 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FiSmartphone } from 'react-icons/fi';
+import { TbLock } from 'react-icons/tb';
+import { FormEventHandler } from 'react';
 
-import { SignInButton } from './button';
-
-import { LogoLogin } from '@/shared/assets/svg/logo-login';
+import { Button } from '@/shared/ui/button';
 import { Flex } from '@/shared/ui/flex';
-import { Text } from '@/shared/ui/text';
-import { DownloadGoogle } from '@/shared/assets/svg/download-google';
-import { DownloadApple } from '@/shared/assets/svg/dowload-apple';
+import { InputPassword, InputPhone } from '@/shared/ui/inputs';
 
 export const SignInForm = () => {
-  return (
-    <Flex center col className='max-w-80' gap={12}>
-      <LogoLogin />
+  const nav = useNavigate();
 
+  const handleAuth: FormEventHandler<HTMLFormElement> = (e) => {
+    e.preventDefault();
+
+    localStorage.setItem('access', 'true');
+    nav('/profile/dashboard');
+  };
+
+  return (
+    <form className='w-full flex flex-col gap-12' onSubmit={handleAuth}>
       <Flex center col gap={6}>
-        <Flex className='w-full h-20 bg-default rounded-md'> </Flex>
-        <Flex className='w-full h-20 bg-default rounded-md'> </Flex>
+        <InputPhone
+          icon={<FiSmartphone opacity={0.5} size={22} />}
+          name='Номер телефона'
+          placeholder='8 (932) 050 55 55'
+          type='tel'
+        />
+        <InputPassword
+          icon={<TbLock opacity={0.5} size={22} />}
+          name='Пароль'
+          placeholder='Введите пароль'
+        />
         <Link className='text-xs' to='/'>
           Забыли пароль?
         </Link>
       </Flex>
 
-      <SignInButton />
-
-      <Flex center col gap={0}>
-        <Text size={13}>У вас ещё нет аккаунта?</Text>
-        <Link className='text-primary font-bold' to='/auth/sign-up'>
-          Зарегистрируйтесь
-        </Link>
-      </Flex>
-
-      <Flex center col>
-        <Text size={14}>Установите приложение.</Text>
-        <Flex className='justify-center'>
-          <DownloadGoogle />
-          <DownloadApple />
-        </Flex>
-      </Flex>
-    </Flex>
+      <Button color='primary' type='submit'>
+        ВОЙТИ
+      </Button>
+    </form>
   );
 };

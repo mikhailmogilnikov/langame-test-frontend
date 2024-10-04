@@ -1,13 +1,13 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
+import { Spinner } from '@/shared/ui/spinner';
+
 export const AuthGuard = () => {
   const isAuthenticated = Boolean(localStorage.getItem('access'));
 
-  console.log(isAuthenticated);
-
   return isAuthenticated ? (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<Spinner fullscreen />}>
       <Outlet />
     </Suspense>
   ) : (
