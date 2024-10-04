@@ -4,25 +4,9 @@ import { BuildOptions } from './types/build.types';
 import { buildBabelLoader } from './babel/buildBabelLoader';
 
 export const buildLoaders = (options: BuildOptions): ModuleOptions['rules'] => {
-  const postCssLoader = {
-    loader: 'postcss-loader',
-    options: {
-      postcssOptions: {
-        plugins: [
-          [
-            'autoprefixer',
-            {
-              // Options
-            },
-          ],
-        ],
-      },
-    },
-  };
-
   const cssLoader = {
     test: /\.css$/i,
-    use: ['style-loader', 'css-loader', postCssLoader],
+    use: ['style-loader', 'css-loader', 'postcss-loader'],
   };
 
   const babelLoader = buildBabelLoader(options);
