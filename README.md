@@ -11,7 +11,7 @@ git clone git@github.com:mikhailmogilnikov/langame-test-frontend.git
 
 2) Перейдите в директорию проекта
 ```bash
-cd only-test-task-frontend
+cd langame-test-frontend
 ```
 
 3) Установите зависимости
