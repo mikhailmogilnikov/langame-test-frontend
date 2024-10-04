@@ -17,6 +17,7 @@ export const buildWebpack = (options: BuildOptions): webpack.Configuration => {
     entry,
     output: {
       path: output,
+      publicPath: '/',
       filename: '[name].[contenthash].js',
       clean: true, // отчищает build от лишних файлов
     },

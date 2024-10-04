@@ -7,6 +7,7 @@ import { ProfileDashboardPage } from '@/pages/profile/dashboard';
 import { SignInPage } from '@/pages/auth/sign-in';
 import { SignUpPage } from '@/pages/auth/sign-up';
 import { AuthLayout } from '@/widgets/layouts/auth-layout';
+import { ProfileLayout } from '@/widgets/layouts/profile-layout';
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'profile',
+        element: <Navigate to='/profile/dashboard' />,
+      },
+      {
+        path: 'profile',
+        element: <ProfileLayout />,
         children: [{ path: 'dashboard', element: <ProfileDashboardPage /> }],
       },
     ],

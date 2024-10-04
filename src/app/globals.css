@@ -4,16 +4,40 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@font-face {
+  font-family: 'Nitti';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../shared/assets/fonts/nitti/Nitti-Normal.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Nitti';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../shared/assets/fonts/nitti/Nitti-Bold.woff') format('woff');
+}
+
 :root {
-  --color-background: hsl(0, 0%, 100%);
+  --color-background: 0, 0%, 100%;
+  --color-foreground: 0, 0%, 0%;
+  --color-primary: 0, 100%, 43%;
+  --color-secondary: 329, 82%, 65%;
+  --color-success: 137, 100%, 34%;
+
+  /* --color-background: hsl(0, 0%, 100%);
   --color-foreground: hsl(0, 0%, 0%);
   --color-primary: hsl(0, 100%, 43%);
   --color-secondary: hsl(329, 82%, 65%);
-  --color-success: hsl(137, 100%, 34%);
+  --color-success: hsl(137, 100%, 34%); */
 }
 
 html {
   background-color: var(--color-background);
   color: var(--color-foreground);
   font-family: 'Lato', sans-serif;
+}
+
+body {
+  overflow: hidden;
 }
