@@ -34,12 +34,16 @@ npm run start
 ### Особенности
 
 - Самописный сборщик на Webpack
+- Ленивая подгрузка страниц (Lazy-loading, Chunk-Splitting)
+- Защищённые маршруты (Нажмите на кнопку "Завершить сессию" для выхода)
+- Самописные UI-элементы с различными вариациями (кнопки, инпуты)
+- Валидация на странице регистрации (Formik, Zod)
 - Настроенный линтер
 - Прекоммит и препуш хуки (autolint, autoprettier, autobuild)
 - Подключен CI (Github Actions)
 - Архитектура FSD
 - Стек: TypeScript, React, Tailwind CSS
-- Оптимизации бандла (Chunk-splitting, Tree Shaking) 
+- Оптимизации бандла (Minify, Tree Shaking) 
 - Оптимизация CSS (PostCSS + Autoprefixer)
 
 ### Дополнительно
