@@ -39,6 +39,7 @@ module.exports = {
       },
       transitionProperty: {
         'transform-color': 'transform, color',
+        'transform-color-opacity': 'transform, color, opacity',
       },
     },
   },

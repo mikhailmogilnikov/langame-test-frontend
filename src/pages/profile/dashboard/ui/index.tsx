@@ -1,3 +1,5 @@
+import { Dashboard } from '@/widgets/dashboard';
+
 export const ProfileDashboardPage = () => {
-  return <h1>dashboard</h1>;
+  return <Dashboard />;
 };
