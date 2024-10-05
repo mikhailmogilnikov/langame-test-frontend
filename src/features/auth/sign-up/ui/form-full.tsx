@@ -57,8 +57,6 @@ export const SignUpFormFull = () => {
               )}
             </Field>
 
-            <>{console.log(errors)}</>
-
             <div className='grid grid-cols-2 gap-8'>
               <Field name='phone'>
                 {({ field }: FieldProps) => (
@@ -138,10 +136,12 @@ export const SignUpFormFull = () => {
             </div>
           </Flex>
 
-          <Flex>
-            <Switch isEnabled={isAgreed} onChange={() => setIsAgreed(!isAgreed)} />
-            <Text size={13}>Даю согласие на информационную рассылку</Text>
-          </Flex>
+          <button onClick={() => setIsAgreed(!isAgreed)}>
+            <Flex>
+              <Switch isEnabled={isAgreed} />
+              <Text size={13}>Даю согласие на информационную рассылку</Text>
+            </Flex>
+          </button>
 
           <Button
             color='primary'

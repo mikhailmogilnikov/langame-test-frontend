@@ -2,7 +2,7 @@ import { DetailedHTMLProps, ReactNode } from 'react';
 import { tv, VariantProps } from 'tailwind-variants';
 
 export const button = tv({
-  base: 'w-full flex gap-3 items-center justify-center rounded-full active:scale-95 transition-transform-color-opacity  font-bold',
+  base: 'w-full flex gap-3 items-center justify-center rounded-full active:scale-95 transition-transform-color-opacity relative font-bold',
   variants: {
     color: {
       default: 'bg-default text-default-foreground',
@@ -31,15 +31,19 @@ type ButtonVariants = VariantProps<typeof button>;
 
 type Props = {
   children?: ReactNode;
+  startContent?: ReactNode;
+  endContent?: ReactNode;
 } & DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> &
   ButtonVariants;
 
 export const Button = (props: Props) => {
-  const { isDisabled, children } = props;
+  const { isDisabled, children, startContent, endContent } = props;
 
   return (
     <button className={button(props)} disabled={isDisabled} {...props}>
+      {startContent && <div className='absolute left-4'>{startContent}</div>}
       {children}
+      {endContent && <div className='absolute right-4'>{endContent}</div>}
     </button>
   );
 };

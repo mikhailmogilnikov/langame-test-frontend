@@ -3,7 +3,7 @@ import { PiCheckBold, PiXBold } from 'react-icons/pi';
 
 type Props = {
   isEnabled: boolean;
-  onChange: VoidFunction;
+  onChange?: VoidFunction;
 };
 
 export const Switch = ({ isEnabled, onChange }: Props) => {

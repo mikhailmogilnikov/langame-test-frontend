@@ -1,6 +1,7 @@
 import { PiArrowLeftBold } from 'react-icons/pi';
 import { useNavigate } from 'react-router-dom';
 import { ReactNode, useState } from 'react';
+import { LuInfo } from 'react-icons/lu';
 
 import { ESignupForms } from '../model/signup-forms.enum';
 
@@ -33,6 +34,7 @@ export const SignUpFormBody = () => {
       <Flex className='max-w-96' gap={6}>
         <Button
           color={activeForm === ESignupForms.FULL ? 'primary' : 'default'}
+          endContent={<LuInfo size={18} />}
           size='sm'
           onClick={() => setActiveForm(ESignupForms.FULL)}
         >
