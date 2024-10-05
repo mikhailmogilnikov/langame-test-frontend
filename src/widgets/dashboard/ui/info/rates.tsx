@@ -20,7 +20,7 @@ export const DashboardRates = ({ rates }: Props) => {
       <Text className='uppercase text-background' size={15} weight={700}>
         Тарифы, доступные на данном ПК
       </Text>
-      <Divider className='text-background/15' />
+      <Divider className='!text-background/15' />
       {rates.map(({ name, price }) => (
         <Fragment key={name}>
           <Flex center className='justify-between'>
@@ -31,7 +31,7 @@ export const DashboardRates = ({ rates }: Props) => {
               {formatCurrency(price)}
             </Text>
           </Flex>
-          <Divider className='text-background/15' />
+          <Divider className='!text-background/15' />
         </Fragment>
       ))}
     </Flex>
