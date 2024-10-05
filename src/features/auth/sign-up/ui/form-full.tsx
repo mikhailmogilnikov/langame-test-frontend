@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { PiUserCircleBold } from 'react-icons/pi';
 import { Field, FieldProps, Form, Formik, FormikProps } from 'formik';
-import { toFormikValidationSchema } from 'zod-formik-adapter'; // подключаем адаптер
+import { toFormikValidationSchema } from 'zod-formik-adapter';
 import { useState } from 'react';
+import { TbLayoutSidebarRight } from 'react-icons/tb';
 
 import {
   SignUpFullInitialFormValues,
@@ -86,6 +87,7 @@ export const SignUpFormFull = () => {
               <Field name='document'>
                 {({ field }: FieldProps) => (
                   <InputSelect
+                    icon={<TbLayoutSidebarRight opacity={0.5} size={22} />}
                     isValid={isPressed ? !errors.document : undefined}
                     message={isPressed && errors.document}
                     {...field}
@@ -143,7 +145,7 @@ export const SignUpFormFull = () => {
 
           <Button
             color='primary'
-            isDisabled={Object.values(values).some((value) => value === '') || !isAgreed}
+            isDisabled={Object.values(values).some((value) => value === '')}
             type='submit'
             onClick={() => setIsPressed(true)}
           >
