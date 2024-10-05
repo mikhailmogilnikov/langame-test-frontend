@@ -38,7 +38,7 @@ module.exports = {
         nitty: ['Nitti'],
       },
       transitionProperty: {
-        'transform-color': 'transform, color',
+        'transform-color-opacity': 'transform, color, opacity',
       },
     },
   },

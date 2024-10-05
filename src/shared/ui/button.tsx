@@ -2,7 +2,7 @@ import { DetailedHTMLProps, ReactNode } from 'react';
 import { tv, VariantProps } from 'tailwind-variants';
 
 export const button = tv({
-  base: 'w-full flex gap-3 items-center justify-center rounded-full active:scale-95 transition-transform-color  font-bold',
+  base: 'w-full flex gap-3 items-center justify-center rounded-full active:scale-95 transition-transform-color-opacity  font-bold',
   variants: {
     color: {
       default: 'bg-default text-default-foreground',
