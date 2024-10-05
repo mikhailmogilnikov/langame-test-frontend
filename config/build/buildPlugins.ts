@@ -1,7 +1,6 @@
 import path from 'path';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import webpack, { Configuration } from 'webpack';
@@ -15,7 +14,6 @@ export const buildPlugins = (
   const { mode, paths } = options;
 
   const isDev = mode === 'development';
-  const isProd = mode === 'production';
 
   const plugins: Configuration['plugins'] = [
     // Для работы с html
@@ -34,16 +32,6 @@ export const buildPlugins = (
 
     // Добавляет поддержку hot-module-replacement для React
     plugins.push(new ReactRefreshWebpackPlugin());
-  }
-
-  if (isProd) {
-    // Выносит CSS в отдельный файл при сборке
-    plugins.push(
-      new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash:8].css',
-        chunkFilename: 'css/[name].[contenthash:8].css',
-      }),
-    );
   }
 
   if (options.bundleAnalyze) {

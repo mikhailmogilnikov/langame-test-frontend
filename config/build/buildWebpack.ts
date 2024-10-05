@@ -22,7 +22,7 @@ export const buildWebpack = (options: BuildOptions): webpack.Configuration => {
       clean: true, // отчищает build от лишних файлов
     },
     module: {
-      rules: buildLoaders(options),
+      rules: buildLoaders(),
     },
     resolve: buildResolvers(options),
     plugins: buildPlugins(options),

@@ -1,15 +1,14 @@
 import { ModuleOptions } from 'webpack';
 
-import { BuildOptions } from './types/build.types';
 import { buildBabelLoader } from './babel/buildBabelLoader';
 
-export const buildLoaders = (options: BuildOptions): ModuleOptions['rules'] => {
+export const buildLoaders = (): ModuleOptions['rules'] => {
   const cssLoader = {
     test: /\.css$/i,
     use: ['style-loader', 'css-loader', 'postcss-loader'],
   };
 
-  const babelLoader = buildBabelLoader(options);
+  const babelLoader = buildBabelLoader();
 
   // Для поддержки ассетов
   const assetsLoader = {
