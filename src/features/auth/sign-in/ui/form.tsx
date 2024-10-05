@@ -1,6 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Formik, Form, FormikProps, Field, FieldProps } from 'formik';
 
+import { SignInInitialFormValues, TSignInInitialFormValues } from '../model/sign-in-form-values';
+
 import { Button } from '@/shared/ui/button';
 import { Flex } from '@/shared/ui/flex';
 import { InputPassword, InputPhone } from '@/shared/ui/inputs';
@@ -8,17 +10,16 @@ import { InputPassword, InputPhone } from '@/shared/ui/inputs';
 export const SignInForm = () => {
   const nav = useNavigate();
 
-  const initialValues = { phone: '', password: '' };
-
-  type FormValues = typeof initialValues;
-
-  const handleAuth = (values: FormValues, actions: FormikProps<FormValues>) => {
+  const handleAuth = (
+    values: TSignInInitialFormValues,
+    actions: FormikProps<TSignInInitialFormValues>,
+  ) => {
     localStorage.setItem('access', 'true');
     nav('/profile/dashboard');
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={handleAuth}>
+    <Formik initialValues={SignInInitialFormValues} onSubmit={handleAuth}>
       {({ values: { phone, password } }) => (
         <Form className='w-full flex flex-col gap-12'>
           <Flex center col gap={6}>
